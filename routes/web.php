@@ -46,7 +46,7 @@ Route::get('/contact', [PostController::class, 'contact']);
 
 
 // Route for custom data
-Route::get('/post/{id}/{name}/{password}', [PostController::class, 'show_post']);
+Route::get('/post/{id}', [PostController::class, 'show_post']);
 
 
 

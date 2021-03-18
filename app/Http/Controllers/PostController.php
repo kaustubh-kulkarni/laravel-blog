@@ -91,8 +91,8 @@ class PostController extends Controller
         return view('contact');
     }
 
-    public function show_post($id, $name, $password){
+    public function show_post($id){
         // With compact function we can send many params
-        return view('post', compact('id', 'name', 'password'));
+        return view('post', compact('id'));
     }
 }
