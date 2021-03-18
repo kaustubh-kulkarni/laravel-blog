@@ -44,6 +44,18 @@ Route::resource('post', PostController::class);
 // Route for contact page
 Route::get('/contact', [PostController::class, 'contact']);
 
+
+// Route for custom data
+Route::get('/post/{id}/{name}/{password}', [PostController::class, 'show_post']);
+
+
+
+
+
+
+
+
+
 // Application routes
 Route::group(['middleware' => ['web']], function(){
 
