@@ -13,7 +13,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        //The content to show when the controller is called
+        return "Hello it is working";
     }
 
     /**

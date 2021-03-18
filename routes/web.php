@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,24 +19,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function () {
-    return "This is about page";
-});
+// Route::get('/about', function () {
+//     return "This is about page";
+// });
 
-Route::get('/contact', function () {
-    return "This is contact page";
-});
+// Route::get('/contact', function () {
+//     return "This is contact page";
+// });
 
-Route::get('/post/{id}/{name}', function ($id, $name) {
-    return "This is post number ". $id ." " . $name;
-});
-// Array to wrap big URL to make them smaller
-Route::get('/admin/posts/example', array('as' => 'admin.home', function(){
-    // Helper function to acces that route
-    $url = route('admin.home');
-    return "This url is " . $url;
-}));
+// Route::get('/post/{id}/{name}', function ($id, $name) {
+//     return "This is post number ". $id ." " . $name;
+// });
+// // Array to wrap big URL to make them smaller
+// Route::get('/admin/posts/example', array('as' => 'admin.home', function(){
+//     // Helper function to acces that route
+//     $url = route('admin.home');
+//     return "This url is " . $url;
+// }));
 
+Route::get('/post', [PostController:: class, 'index']);
 
 // Application routes
 Route::group(['middleware' => ['web']], function(){
