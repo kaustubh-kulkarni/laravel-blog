@@ -37,7 +37,9 @@ Route::get('/', function () {
 //     return "This url is " . $url;
 // }));
 
-Route::get('/post/{id}', [PostController:: class, 'index']);
+// Route::get('/post/{id}', [PostController:: class, 'index']);
+// Resource will help us by creating special routes (CRUD)
+Route::resource('post', PostController::class);
 
 // Application routes
 Route::group(['middleware' => ['web']], function(){
