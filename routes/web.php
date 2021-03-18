@@ -19,27 +19,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/about', function () {
-//     return "This is about page";
-// });
+Route::get('/about', function () {
+    return "This is about page";
+});
 
-// Route::get('/contact', function () {
-//     return "This is contact page";
-// });
+Route::get('/contact', function () {
+    return "This is contact page";
+});
 
-// Route::get('/post/{id}/{name}', function ($id, $name) {
-//     return "This is post number ". $id ." " . $name;
-// });
-// // Array to wrap big URL to make them smaller
-// Route::get('/admin/posts/example', array('as' => 'admin.home', function(){
-//     // Helper function to acces that route
-//     $url = route('admin.home');
-//     return "This url is " . $url;
-// }));
+Route::get('/post/{id}/{name}', function ($id, $name) {
+    return "This is post number ". $id ." " . $name;
+});
+// Array to wrap big URL to make them smaller
+Route::get('/admin/posts/example', array('as' => 'admin.home', function(){
+    // Helper function to acces that route
+    $url = route('admin.home');
+    return "This url is " . $url;
+}));
 
-// Route::get('/post/{id}', [PostController:: class, 'index']);
+Route::get('/post/{id}', [PostController:: class, 'index']);
 // Resource will help us by creating special routes (CRUD)
 Route::resource('post', PostController::class);
+
+// Route for contact page
+Route::get('/contact', [PostController::class, 'contact']);
 
 // Application routes
 Route::group(['middleware' => ['web']], function(){
