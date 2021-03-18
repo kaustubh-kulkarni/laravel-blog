@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //First parameter is route and second one will be anything function etc.
+//Different routes
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,6 +29,12 @@ Route::get('/contact', function () {
 Route::get('/post/{id}/{name}', function ($id, $name) {
     return "This is post number ". $id ." " . $name;
 });
+// Array to wrap big URL to make them smaller
+Route::get('/admin/posts/example', array('as' => 'admin.home', function(){
+    // Helper function to acces that route
+    $url = route('admin.home');
+    return "This url is " . $url;
+}));
 
 
 // Application routes
