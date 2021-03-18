@@ -17,6 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/about', function () {
+    return "This is about page";
+});
+
+Route::get('/contact', function () {
+    return "This is contact page";
+});
+
+Route::get('/post/{id}/{name}', function ($id, $name) {
+    return "This is post number ". $id ." " . $name;
+});
+
+
 // Application routes
 Route::group(['middleware' => ['web']], function(){
 
