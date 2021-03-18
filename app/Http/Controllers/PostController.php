@@ -11,10 +11,11 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    // This function takes everything from URL
+    public function index($id)
     {
         //The content to show when the controller is called
-        return "Hello it is working";
+        return "Hello it is working and the number is" . $id;
     }
 
     /**
