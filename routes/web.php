@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,15 +49,15 @@ Route::get('/contact', [PostController::class, 'contact']);
 // Route for custom data
 Route::get('/post/{id}', [PostController::class, 'show_post']);
 
+// Route to insert some data in posts
+Route::get('/insert', function(){
+    DB::insert('insert into posts(title, content) values(?, ?)', ['PHP with Laravel', 'Laravel is good']);
+});
 
 
 
 
-
-
-
-
-// Application routes
+// Application routes for middlewares
 Route::group(['middleware' => ['web']], function(){
 
 });
