@@ -54,6 +54,14 @@ Route::get('/insert', function(){
     DB::insert('insert into posts(title, content) values(?, ?)', ['PHP with Laravel', 'Laravel is good']);
 });
 
+// Route to read the raw data from posts
+Route::get('/read', function(){
+    // Results come in STD class objects so acess it like dynamic props
+   
+    $results = DB::select('select * from posts where id = ?', [1]);
+    return $results;
+});
+
 
 
 
