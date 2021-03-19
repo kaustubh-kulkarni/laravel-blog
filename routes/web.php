@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -74,6 +76,12 @@ Route::get('/delete', function(){
     return $deleted;
 });
 
+
+// Eloquent method by LARAVEL (ORM object relational model)
+Route::get('/find', function(){
+    $posts = Post::find(4);
+    return $posts;
+});
 
 
 
