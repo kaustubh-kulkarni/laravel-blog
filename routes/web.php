@@ -68,6 +68,12 @@ Route::get('/update', function(){
     return $updated;
 });
 
+// Route to delete raw data from posts
+Route::get('/delete', function(){
+    $deleted = DB::delete('delete from posts where id = ?', [3]);
+    return $deleted;
+});
+
 
 
 
