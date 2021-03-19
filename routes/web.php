@@ -83,6 +83,14 @@ Route::get('/find', function(){
     return $posts;
 });
 
+// Conditional data processing
+Route::get('/findwhere', function(){
+
+    $posts = Post::where('id', 5)->orderBy('id', 'asc')->take(1)->get();
+
+    return $posts;
+
+});
 
 
 // Application routes for middlewares
