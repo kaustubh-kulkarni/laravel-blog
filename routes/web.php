@@ -79,17 +79,20 @@ Route::get('/delete', function(){
 
 // Eloquent method by LARAVEL (ORM object relational model)
 Route::get('/find', function(){
-    $posts = Post::find(4);
+    $posts = Post::all();
     return $posts;
 });
 
 // Conditional data processing
 Route::get('/findwhere', function(){
-
     $posts = Post::where('id', 5)->orderBy('id', 'asc')->take(1)->get();
-
     return $posts;
+});
 
+// findOrFail function to find if exist or throw error if not
+Route::get('/findmore', function(){
+    $posts = Post::findOrFail(2);
+    return $posts;
 });
 
 
